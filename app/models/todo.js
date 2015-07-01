@@ -5,12 +5,27 @@ import DS from "ember-data";
 
 var Todo =  DS.Model.extend({
   title: DS.attr('string'),
-  isComplete: DS.attr('boolean')
+  isCompleted: DS.attr('boolean')
 });
 
-
-Todo.reopen({
-
+Todo.reopenClass({
+  FIXTURES: [
+    {
+      id: 1,
+      title: 'Learn Ember.js',
+      isCompleted: false
+    },
+    {
+      id: 2,
+      title: 'Learn Node.js',
+      isCompleted: false
+    },
+    {
+      id: 3,
+      title: 'Learn socket.io',
+      isCompleted: false
+    }
+  ]
 });
 
 export default Todo;
